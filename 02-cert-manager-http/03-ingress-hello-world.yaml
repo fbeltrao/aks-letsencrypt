@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-world
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+spec:
+  tls:
+  - hosts:
+    - hello-world.<your-domain>
+    secretName: hello-world
+  rules:
+  - host: hello-world.<your-domain>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: aks-helloworld
+          servicePort: 80

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: www
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: www.<your-domain>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: aks-helloworld
+          servicePort: 80
