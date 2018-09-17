@@ -4,19 +4,13 @@ This repository demonstrates how to add Kubernetes Ingress to a cluster in Azure
 
 ## Motivation
 
-I own a Visual Studio subscription which gives me monthly [Azure credits](https://docs.microsoft.com/en-us/visualstudio/subscriptions/vs-azure). I wantto optimize the credits usage to run my blog and temporarly experiments seamlessly. Additionally, I would like to use my own domain.
+I own a Visual Studio subscription which gives me monthly [Azure credits](https://docs.microsoft.com/en-us/visualstudio/subscriptions/vs-azure). I want to optimize the credits usage to run my blog and temporary experiments seamlessly. Additionally, I would like to use my own domain.
 
 Since I don't expect continuous and high load in any of the workloads a good option is to use AKS with [B-series VMs](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/b-series-burstable). In short, B-series VMs store credits during low load, spending them during higher load. It is perfect for burst/seasonal workloads.
 
-End goal:
+The end solution is looks like this:
 
-```text
-                                            |- blog.<your-domain>  -> external url
-                                            |
-mydomain.io -> Azure DNS -> AKS -> Ingress -|- demo1.<your-domain> -> demo1 svc
-                                            |
-                                            |- demo2.<your-domain> -> demo2 svc
-```
+![End solution](media/overview.png)
 
 New deployments should be able to create TLS terminated sub-domains.
 
