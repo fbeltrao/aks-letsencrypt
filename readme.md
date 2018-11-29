@@ -19,7 +19,7 @@ New deployments should be able to create TLS terminated sub-domains.
 1. [Use Azure DNS for a domain](./use-azure-dns-for-a-domain.md)
 1. [Create AKS Cluster](./create-aks-cluster.md)
 1. [Install NGINX Ingress](./install-nginx-ingress.md)
-1. [Install Certicate Manager with http validation](./install-certicate-manager.md)
+1. [Install Certicate Manager with http validation](./install-certificate-manager.md)
 1. [Setup wildcard certificates with Azure DNS validation](./setup-wildcard-certificates-with-azure-dns.md)
 1. [Ingress to external URL](./ingress-to-external-url.md)
 
